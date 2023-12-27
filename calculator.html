@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calucalator</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 100px;">
+        <h1 style="color: darkred;"><b>CALCULATOR</b></h1>
+    </div>
+<div class="c">
+    <input type="number" id="first" class="n1" placeholder="first number" ><br><br>
+    <!-- <span id="sp1"></span><br> -->
+    <select name="" id="opp" class="i">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select><br><br>
+    <input type="number" id="second" class="n2" placeholder="second number"><br>
+    <span id="sp2" style="color: red;"></span><br>
+    <button onclick="a()" class="btn">Calucalate</button><br><br>
+    <input type="number" id="third" readonly class="n3" placeholder="result"><br>
+</div>
+</body>
+<style>
+    body{
+        background-image:url(https://cdn1.vectorstock.com/i/1000x1000/17/50/abstract-background-calculator-vector-11601750.jpg)
+    }
+    .opp{
+        width: 20%;
+        padding: 10px;
+        border: 5px solid green;
+        box-shadow: 1px 1px 2px 2px yellow;
+        cursor: pointer;
+    }
+    .n1{
+        padding: 5px;
+        margin: 5%;
+        text-transform: capitalize;
+        border-radius: 20px;
+        border: 5px solid greenyellow;
+        box-shadow: 1px 1px 2px 2px yellow;
+    }
+    .n2{
+        padding: 5px;
+        margin: 5%;
+        text-transform: capitalize;
+        border-radius: 20px;
+        border: 5px solid greenyellow;
+        box-shadow: 1px 1px 2px 2px yellow;
+
+    }
+    .n3{
+        padding: 5px;
+        margin: 5%;
+        text-transform: capitalize;
+        border-radius: 20px;
+        border: 5px solid greenyellow;
+        box-shadow: 1px 1px 2px 2px yellow;
+
+    }
+    .btn:hover{
+        color: aqua;
+        background-color: olivedrab;
+        box-shadow: 1px 1px 5px 5px orchid;
+    }
+    .btn{
+        width: 50%;
+        padding: 10px;
+        margin: 5%;
+        text-transform: capitalize;
+        border-radius: 20px;
+        border: 5px solid greenyellow;
+        color: blueviolet;
+        background-color: black;
+        box-shadow: 1px 1px 2px 2px yellow;
+        cursor: pointer;
+
+    }
+    .c{
+        background-color: silver;
+        width: 30%;
+        margin-left: 450px;
+        margin-top: 40px;
+        text-align: center;
+        border-radius: 20px;
+        border: 5px solid red;
+        box-shadow: 1px 1px 2px 2px yellow;
+    }
+</style>
+<script>
+    function a(){
+        let first = document.getElementById("first").value;
+        let second =document.getElementById("second").value;
+        let opp = document.getElementById("opp").value;
+        // let third = document.getElementById("third").value;
+        // let sp1 = document.getElementById(sp1);
+        let sp2 = document.getElementById("sp2");
+
+        if(first !== "" && second !== ""){
+            if(opp == "+"){
+                document.getElementById("third").value = parseInt(first) + parseInt(second)
+            }
+            else if(opp == "-"){
+                document.getElementById("third").value = parseInt(first) - parseInt(second)
+            }
+            else if(opp == "*"){
+                document.getElementById("third").value = parseInt(first) * parseInt(second)
+            }
+            else if(opp == "/"){
+                document.getElementById("third").value = parseInt(first) / parseInt(second)
+            }
+            else if(opp == "%"){
+                document.getElementById("third").value = parseInt(first) % parseInt(second)
+            }
+        }else{
+            sp2.textContent = "please enter some value"
+
+        }
+    }
+    document.getElementById("first");
+    first.addEventListener("input",function(){
+        sp2.textContent = ""; 
+    })
+    document.getElementById("second");
+    second.addEventListener("input",function(){
+        sp2.textContent = ""; 
+    })
+</script>
+</html>
